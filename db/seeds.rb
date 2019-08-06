@@ -8,4 +8,5 @@
 User.create(username: 'John')
 MonthlyBudget.create(name: 'January', user_id: 1)
 Category.create(name: 'Shopping', monthly_budget_id: 1)
-Transaction.create(name: 'Target', user_id: 1, monthly_budget_id: 1, category_id: 1)
+CategoryItem.create(name: 'Clothes', category_id: 1)
+Transaction.create(name: 'Target', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 1)

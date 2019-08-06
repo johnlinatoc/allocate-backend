@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_180910) do
+ActiveRecord::Schema.define(version: 2019_08_06_220910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2019_08_06_180910) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["monthly_budget_id"], name: "index_categories_on_monthly_budget_id"
+  end
+
+  create_table "category_items", force: :cascade do |t|
+    t.string "name"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_category_items_on_category_id"
   end
 
   create_table "monthly_budgets", force: :cascade do |t|
@@ -36,9 +44,11 @@ ActiveRecord::Schema.define(version: 2019_08_06_180910) do
     t.bigint "user_id"
     t.bigint "monthly_budget_id"
     t.bigint "category_id"
+    t.bigint "category_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_transactions_on_category_id"
+    t.index ["category_item_id"], name: "index_transactions_on_category_item_id"
     t.index ["monthly_budget_id"], name: "index_transactions_on_monthly_budget_id"
     t.index ["user_id"], name: "index_transactions_on_user_id"
   end
@@ -50,8 +60,10 @@ ActiveRecord::Schema.define(version: 2019_08_06_180910) do
   end
 
   add_foreign_key "categories", "monthly_budgets"
+  add_foreign_key "category_items", "categories"
   add_foreign_key "monthly_budgets", "users"
   add_foreign_key "transactions", "categories"
+  add_foreign_key "transactions", "category_items"
   add_foreign_key "transactions", "monthly_budgets"
   add_foreign_key "transactions", "users"
 end
