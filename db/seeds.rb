@@ -5,33 +5,27 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Transaction.all.each{|u| u.delete}
-CategoryItem.all.each{|u| u.delete}
-Category.all.each{|u| u.delete}
-MonthlyBudget.all.each{|u| u.delete}
-User.all.each{|u| u.delete}
+# Transaction.destroy_all
+# Category.destroy_all
+# MonthlyBudget.destroy_all
+# User.destroy_all
+
 
 User.create(username: 'John')
-MonthlyBudget.create(name: 'January', user_id: 1)
 
-Category.create(name: 'Shopping', monthly_budget_id: 1)
-Category.create(name: 'Transportation', monthly_budget_id: 1)
-Category.create(name: 'Car Payment', monthly_budget_id: 1)
-Category.create(name: 'Food', monthly_budget_id: 1)
+MonthlyBudget.create(name: 'January', user_id: 1, monthly_budget: 2000)
 
-CategoryItem.create(name: 'Clothes', category_id: 1)
-CategoryItem.create(name: 'Shoes', category_id: 1)
-CategoryItem.create(name: 'Gas', category_id: 2)
-CategoryItem.create(name: 'Oil Change', category_id: 2)
-CategoryItem.create(name: 'Prius', category_id: 3)
-CategoryItem.create(name: 'Takeout', category_id: 4)
-CategoryItem.create(name: 'Groceries', category_id: 4)
+Category.create(name: 'Shopping', monthly_budget_id: 1, budget: 100)
+Category.create(name: 'Transportation', monthly_budget_id: 1, budget: 100)
+Category.create(name: 'Car Payment', monthly_budget_id: 1, budget: 100)
+Category.create(name: 'Food', monthly_budget_id: 1, budget: 100)
 
-Transaction.create(name: 'Target', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 1)
-Transaction.create(name: 'DSW', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 2)
-Transaction.create(name: 'Shell', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 3)
-Transaction.create(name: 'BP', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 3)
-Transaction.create(name: 'Jiffy Lube', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 4)
-Transaction.create(name: 'Prius Payment', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 5)
-Transaction.create(name: 'Panda Express', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 6)
-Transaction.create(name: 'Costco', user_id: 1, monthly_budget_id: 1, category_id: 1, category_item_id: 7)
+
+Transaction.create(name: 'Target', user_id: 1, monthly_budget_id: 1, category_id: 1, amount: 15)
+Transaction.create(name: 'DSW', user_id: 1, monthly_budget_id: 1, category_id: 2, amount: 14)
+Transaction.create(name: 'Shell', user_id: 1, monthly_budget_id: 1, category_id: 2, amount: 44)
+Transaction.create(name: 'BP', user_id: 1, monthly_budget_id: 1, category_id: 2, amount: 24)
+Transaction.create(name: 'Jiffy Lube', user_id: 1, monthly_budget_id: 1, category_id: 2, amount: 65)
+Transaction.create(name: 'Prius Payment', user_id: 1, monthly_budget_id: 1, category_id: 3, amount: 664)
+Transaction.create(name: 'Panda Express', user_id: 1, monthly_budget_id: 1, category_id: 4, amount: 44)
+Transaction.create(name: 'Costco', user_id: 1, monthly_budget_id: 1, category_id: 4, amount: 34)
