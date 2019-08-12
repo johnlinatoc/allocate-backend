@@ -1,29 +1,33 @@
 class AuthController < ApplicationController
-  def create
-    user = User.find_by(username: params[:username])
+  skip_before_action :authorized, only: [:create]
 
-    if user && user.authenticate(params[:password])
-      token = JWT.encode({id: user.id}, 'app_secret', 'HS256')
-      render json: { id: user.id, username: user.username, token: token}
-    else
-      render json: { error: 'Not Authorized'}, status: 401
+    def create
+
+      @user = User.find_by(username: params[:username])
+      puts @user
+      if @user && @user.authenticate(params[:password])
+        token = encode_token({ user_id: @user.id })
+        render json: { user: UserSerializer.new(@user), jwt: token }, status: :accepted
+      else
+        render json: { error: 'Not Authorized' }, status: 401
+      end
     end
-  end
 
-  def show
-    jwt_token = request.headers[:Authorization]
-    decode_token = JWT.decode(jwt_token, 'app_secret', true, { algorithm: 'HS256' })
-
-    id = decode_token.first['id']
-    user = User.find(id)
-
-    output = { id: user.id, username: user.username, token: jwt_token }
-
-    if user
-      render json: output
-    else
-      render json: { error: 'Not Authorized'}, status: 401
+    def show
+      token = request.headers[:Authorization]
+      decoded_token = JWT.decode(token, 'app_secret', true, { algorithm: 'HS256' })
+      id = decoded_token.first['id']
+      user = User.find(id)
+      if user
+        render json: { id: user.id, username: user.username, jwt: token }
+      else
+        render json: { error: 'Not Authorized'}, status: 401
+      end
     end
-  end
 
+    private
+
+    def user_login_params
+      params.require(:auth).permit(:username, :password)
+    end
 end
