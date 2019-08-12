@@ -5,13 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
 # Transaction.destroy_all
 # Category.destroy_all
 # MonthlyBudget.destroy_all
 # User.destroy_all
 
 
-User.create(username: 'John')
+User.create(username: 'John', password_digest: 123)
 
 MonthlyBudget.create(name: 'January', user_id: 1, monthly_budget: 2000)
 

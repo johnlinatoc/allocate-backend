@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :users, :monthly_budgets, :categories, :transactions
+  resources :users
+  resources :monthly_budgets, :categories, :transactions
   # namespace :api do
   #     namespace :v1 do
   #       resources :boardgames
