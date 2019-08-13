@@ -7,6 +7,10 @@ Rails.application.routes.draw do
         # resources :boardgames
         # resources :users
         resources :users, only: [:create]
+        get '/profile' , to: 'users#profile'
+        get '/users/:id/categories' , to: 'categories#user_categories'
+        get '/users/:id/transactions' , to: 'transactions#user_transactions'
+        get '/users/:id/months' , to: 'monthly_budgets#user_months'
         post '/auth', to: 'auth#create'
         get '/current_user', to: 'auth#show'
         post '/current_user', to: 'users#create'

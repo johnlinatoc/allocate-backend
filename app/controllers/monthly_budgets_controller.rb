@@ -9,6 +9,13 @@ class MonthlyBudgetsController < ApplicationController
     render json: monthly_budget
   end
 
+  def user_months
+    p 'momomomomomomomo'
+    user = User.find_by(id: params[:id])
+    months = MonthlyBudget.where(user_id: user.id)
+    render json: months
+  end
+
   # def create
   #   transaction = Transaction.create()
   #   render json: { }

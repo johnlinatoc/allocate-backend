@@ -9,6 +9,12 @@ class TransactionsController < ApplicationController
     render json: transaction
   end
 
+  def user_transactions
+    user = User.find_by(id: params[:id])
+    transactions = Transaction.where(user_id: user.id)
+    render json: transactions
+  end
+
   # def create
   #   transaction = Transaction.create()
   #   render json: { }
