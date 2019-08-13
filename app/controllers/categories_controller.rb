@@ -5,14 +5,11 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    p '=========tytytyty============l=l=l=l=l=[]'
     category = Category.find_by(id: params[:id])
     render json: category
   end
 
   def user_categories
-    p '/,/,/,/,/./././,//,/././,/,,/,/././,'
-
     user = User.find(params[:id])
     monthly_budget_ids = user.monthly_budgets.pluck(:id)
     p monthly_budget_ids

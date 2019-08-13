@@ -15,10 +15,18 @@ class TransactionsController < ApplicationController
     render json: transactions
   end
 
-  # def create
-  #   transaction = Transaction.create()
-  #   render json: { }
-  # end
+  def create
+    p'papappapapappa'
+    p params
+    transaction = Transaction.create(
+      name: params[:name],
+      user_id: params[:user_id],
+      category_id: params[:category_id],
+      monthly_budget_id: params[:monthly_budget_id],
+      amount: params[:amount]
+    )
+    render json: transaction
+  end
 
   # def update
   #     tranactions = transaction.find_by(id: params[:id])
