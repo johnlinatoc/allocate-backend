@@ -17,10 +17,21 @@ class CategoriesController < ApplicationController
     render json: categories
   end
 
-  # def create
-  #   transaction = Transaction.create()
-  #   render json: { }
-  # end
+  def create
+    p 'createCategorycreateCategorycreateCategorycreateCategory'
+    p params
+    budget = Category.create(
+      name: params[:category_name],
+      budget: params[:category_budget],
+      monthly_budget_id: params[:month_id],
+    )
+    render json: budget
+  end
+
+  # month_id,
+  # category_name,
+  # category_budget,
+  # user_id: this.props.userInfo.id
 
   # def update
   #     tranactions = transaction.find_by(id: params[:id])

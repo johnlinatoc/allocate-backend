@@ -16,7 +16,6 @@ class TransactionsController < ApplicationController
   end
 
   def create
-    p'papappapapappa'
     p params
     transaction = Transaction.create(
       name: params[:name],

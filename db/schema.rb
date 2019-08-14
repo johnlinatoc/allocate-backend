@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_08_06_220910) do
 
   create_table "monthly_budgets", force: :cascade do |t|
     t.string "name"
+    t.integer "year"
     t.float "monthly_budget"
     t.bigint "user_id"
     t.datetime "created_at", null: false
