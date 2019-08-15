@@ -18,20 +18,20 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    p 'createCategorycreateCategorycreateCategorycreateCategory'
-    p params
-    budget = Category.create(
-      name: params[:category_name],
-      budget: params[:category_budget],
-      monthly_budget_id: params[:month_id],
-    )
-    render json: budget
+    categories = params[:categories]
+
+    categories.each do |category|
+      Category.create(
+        name: category[:name],
+        budget: category[:amount],
+        monthly_budget_id: params[:month_id]
+      )
+
+    end
+    render json: { }
   end
 
-  # month_id,
-  # category_name,
-  # category_budget,
-  # user_id: this.props.userInfo.id
+end
 
   # def update
   #     tranactions = transaction.find_by(id: params[:id])
@@ -44,4 +44,3 @@ class CategoriesController < ApplicationController
   #     transaction.destroy
   #     render json: {}, status: :no_content
   # end
-end

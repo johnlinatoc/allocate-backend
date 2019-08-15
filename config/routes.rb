@@ -17,6 +17,7 @@ Rails.application.routes.draw do
         get '/current_user/:id', to: 'users#show'
         patch '/current_user/:id', to: 'users#update'
         delete '/current_user/:id', to: 'users#destroy'
+        patch '/new_budget', to: 'monthly_budgets#newMonthBudget'
     #   end
     # end
 
