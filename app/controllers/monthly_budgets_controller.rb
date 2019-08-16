@@ -1,13 +1,15 @@
 class MonthlyBudgetsController < ApplicationController
   def index
     monthly_budgets = MonthlyBudget.all
-    render json: monthly_budgets
+    p monthly_budgets
+    sorted_months = monthly_budgets.sort_by { |obj| obj.created_at }
+    render json: sorted_months
   end
 
-  def show
-    monthly_budget = MonthlyBudget.find_by(id: params[:id])
-    render json: monthly_budget
-  end
+  # def show
+  #   monthly_budget = MonthlyBudget.find_by(id: params[:id])
+  #   render json: monthly_budget
+  # end
 
   def user_months
     user = User.find_by(id: params[:id])
