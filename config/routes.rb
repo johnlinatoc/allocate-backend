@@ -18,6 +18,7 @@ Rails.application.routes.draw do
         patch '/current_user/:id', to: 'users#update'
         delete '/current_user/:id', to: 'users#destroy'
         patch '/new_budget', to: 'monthly_budgets#newMonthBudget'
+        # get '/most_popular_cat', to: 'categories#most_popular_category'
     #   end
     # end
 

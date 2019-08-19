@@ -12,7 +12,6 @@ class CategoriesController < ApplicationController
   def user_categories
     user = User.find(params[:id])
     monthly_budget_ids = user.monthly_budgets.pluck(:id)
-    p monthly_budget_ids
     categories = Category.where(monthly_budget_id: monthly_budget_ids)
     render json: categories
   end
@@ -26,9 +25,19 @@ class CategoriesController < ApplicationController
         budget: category[:amount],
         monthly_budget_id: params[:month_id]
       )
-
     end
+
     render json: { }
+  end
+
+  def most_popular_category
+    counts = Hash.new
+    Transaction.all.each do |trans|
+      counts[trans.category_id] += 1
+    end
+
+    most_popular_category_id = counts.sort_by {|id, count| count}.reverse.first[0]
+    Category.all.find_by(id: b)
   end
 
 end
