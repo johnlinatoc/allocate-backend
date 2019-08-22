@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
       )
     end
 
-    render json: { }
+    render json: categories
   end
 
   def most_popular_category
