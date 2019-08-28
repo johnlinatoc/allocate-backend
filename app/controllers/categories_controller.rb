@@ -32,7 +32,7 @@ class CategoriesController < ApplicationController
 
   def most_popular_category
     counts = Hash.new
-    Transaction.all.each do |trans|
+    Expense.all.each do |trans|
       counts[trans.category_id] += 1
     end
 
@@ -43,13 +43,13 @@ class CategoriesController < ApplicationController
 end
 
   # def update
-  #     tranactions = transaction.find_by(id: params[:id])
+  #     tranactions = expense.find_by(id: params[:id])
   #     tranactions.update()
   #     render json: { }
   # end
 
   # def destroy
-  #     transaction = Transaction.find_by(id: params[:id])
-  #     transaction.destroy
+  #     expense = Expense.find_by(id: params[:id])
+  #     expense.destroy
   #     render json: {}, status: :no_content
   # end

@@ -6,11 +6,6 @@ class MonthlyBudgetsController < ApplicationController
     render json: sorted_months
   end
 
-  # def show
-  #   monthly_budget = MonthlyBudget.find_by(id: params[:id])
-  #   render json: monthly_budget
-  # end
-
   def user_months
     user = User.find_by(id: params[:id])
     months = MonthlyBudget.where(user_id: user.id)
@@ -34,8 +29,8 @@ class MonthlyBudgetsController < ApplicationController
   end
 
   # def destroy
-  #     transaction = Transaction.find_by(id: params[:id])
-  #     transaction.destroy
+  #     expense = Expense.find_by(id: params[:id])
+  #     expense.destroy
       # render json: {}, status: :no_content
   # end
 end

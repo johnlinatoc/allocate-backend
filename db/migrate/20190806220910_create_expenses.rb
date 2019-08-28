@@ -1,6 +1,6 @@
-class CreateTransactions < ActiveRecord::Migration[5.2]
+class CreateExpenses < ActiveRecord::Migration[5.2]
   def change
-    create_table :transactions do |t|
+    create_table :expenses do |t|
       t.string :name
       t.float :amount
       t.references :user, foreign_key: true

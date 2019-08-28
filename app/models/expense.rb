@@ -1,4 +1,4 @@
-class Transaction < ApplicationRecord
+class Expense < ApplicationRecord
   belongs_to :user
   belongs_to :monthly_budget
   belongs_to :category
