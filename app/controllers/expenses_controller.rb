@@ -16,7 +16,6 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    p params
     expense = Expense.create(
       name: params[:name],
       user_id: params[:user_id],
@@ -27,15 +26,4 @@ class ExpensesController < ApplicationController
     render json: expense
   end
 
-  # def update
-  #     tranactions = expense.find_by(id: params[:id])
-  #     tranactions.update()
-  #     render json: { }
-  # end
-
-  # def destroy
-  #     expense = Expense.find_by(id: params[:id])
-  #     expense.destroy
-  #     render json: {}, status: :no_content
-  # end
 end

@@ -10,6 +10,9 @@ class UsersController < ApplicationController
      if @user.valid?
         @token = encode_token({ user_id: @user.id })
 
+        #upon user creation, 12 months will be automatically created as well per user.
+        #First month starts on date of creation.
+        
         monthKey = {
           1 => 'January',
           2 => 'February',
