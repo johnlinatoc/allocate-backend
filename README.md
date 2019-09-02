@@ -36,6 +36,9 @@ To run this project, install it locally using bundler:
 
 ```
 $ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails db:seed
 $ rails server
 ```
 
