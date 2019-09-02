@@ -6,16 +6,21 @@ Click here for project's frontend: [Analog (Frontend)](https://github.com/johnli
 Click here for a video demo: [Allocate Video Demo](https://www.youtube.com/watch?v=2tAANzijr40)
 
 ## Motivation
-After struggling with my own financial illiteracy and discovering a book, [Financial Peace](https://books.google.com/books/about/Financial_Peace_Revisited.html?id=3BhiXcAYgj4C&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false), that helped me understand how to make wiser decisions, I wanted to make a tool that could hopefully help others too. This budgeting app was designed to help others make a budget as easy as possible in the most clearest way I could design. My goal was to allow users to have as little friction as possible when entering expenses and also to have all the necessary info as easy to read as possible.
+This budgeting app was designed to help others make their own monthly budgets as easy as possible in the most clearest way I could design. After struggling with my own financial illiteracy and discovering a book, [Financial Peace](https://books.google.com/books/about/Financial_Peace_Revisited.html?id=3BhiXcAYgj4C&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false), that helped me understand how to make wiser decisions, I wanted to make a tool that could hopefully help others too. My goal was to allow users to have as little friction as possible when entering expenses and also to have all the necessary info as easy to read as possible.
 
 ## Screenshots
-Login: ![login page](./public/image1.png)
+
+Login Page: ![login page](./public/image1.png)
+
 Main Dashboard: ![Main Dashboard](./public/image2.png)
+
 MyBudget Page: ![MyBudget Page](./public/image3.png)
+
 Example of Creating New Budget: ![New Budget](./public/image4.png)
+
 ## Tech/framework used
 <b>Built with</b>
-- [Ruby on Rails](https://rubyonrails.org/)
+- [Ruby on Rails 2.6.1](https://rubyonrails.org/)
 - [React](https://reactjs.org/)
 - [Bootstrap React for forms](https://react-bootstrap.github.io/components/forms/)
 - [Victory Charts for data visualization](https://formidable.com/open-source/victory/)
@@ -23,13 +28,19 @@ Example of Creating New Budget: ![New Budget](./public/image4.png)
 ## Features
 
 Users can add expenses and the dashboard's user interface dynamically changes upon user entries with different relevant indicators.
+
 Users also have a MyBudget section that showcases their spending habits to help them make wiser decisions.
 
 ## Installation
-Provide step by step series of examples and explanations about how to get a development env running.
+To run this project, install it locally using bundler:
 
-## How to use?
-If people like your project they’ll want to learn how they can use it. To do so include step by step guide to use your project.
+```
+$ bundle install
+$ rails server
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## The MIT License (MIT)
 
