@@ -1,7 +1,7 @@
-# Analog (Backend)
+# Allocate (Backend)
 Personal budgeting app that allows users to create a monthly budget and dynamically displays all the necessary information in their dashboard and on their MyBudget page.
 
-Click here for project's frontend: [Analog (Frontend)](https://github.com/johnlinatoc/allocate-frontend)
+Click here for project's frontend: [Allocate (Frontend)](https://github.com/johnlinatoc/allocate-frontend)
 
 Click here for a video demo: [Allocate Video Demo](https://www.youtube.com/watch?v=2tAANzijr40)
 
