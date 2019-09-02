@@ -9,8 +9,7 @@ Click here for a video demo: [Allocate Video Demo](https://www.youtube.com/watch
 After struggling with my own financial illiteracy and discovering a book, [Financial Peace](https://books.google.com/books/about/Financial_Peace_Revisited.html?id=3BhiXcAYgj4C&printsec=frontcover&source=kp_read_button#v=onepage&q&f=false), that helped me understand how to make wiser decisions, I wanted to make a tool that could hopefully help others too. This budgeting app was designed to help others make a budget as easy as possible in the most clearest way I could design. My goal was to allow users to have as little friction as possible when entering expenses and also to have all the necessary info as easy to read as possible.
 
 ## Screenshots
-Include logo/demo screenshot etc.
-
+Login: ![alt text](./public/image1.png)
 ## Tech/framework used
 <b>Built with</b>
 - [Ruby on Rails](https://rubyonrails.org/)
