@@ -17,8 +17,8 @@ class ExpensesController < ApplicationController
 
   def create
     expense = Expense.create(
-      name: params[:name],
-      user_id: params[:user_id],
+      name: params[:expense_title],
+      user_id: params[:userId],
       category_id: params[:category_id],
       monthly_budget_id: params[:monthly_budget_id],
       amount: params[:amount]
