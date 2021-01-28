@@ -1,7 +1,8 @@
 class MonthlyBudgetsController < ApplicationController
+  skip_before_action :authorized
+
   def index
     monthly_budgets = MonthlyBudget.all
-    p monthly_budgets
     sorted_months = monthly_budgets.sort_by { |obj| obj.created_at }
     render json: sorted_months
   end
@@ -27,10 +28,4 @@ class MonthlyBudgetsController < ApplicationController
     month.update( monthly_budget: params[:monthly_income] )
     render json: month
   end
-
-  # def destroy
-  #     expense = Expense.find_by(id: params[:id])
-  #     expense.destroy
-      # render json: {}, status: :no_content
-  # end
 end
