@@ -39,17 +39,16 @@ class CategoriesController < ApplicationController
   #   most_popular_category_id = counts.sort_by {|id, count| count}.reverse.first[0]
   #   Category.all.find_by(id: b)
   # end
-
 end
 
-  # def update
-  #     tranactions = expense.find_by(id: params[:id])
-  #     tranactions.update()
-  #     render json: { }
-  # end
+# def update
+#     tranactions = expense.find_by(id: params[:id])
+#     tranactions.update()
+#     render json: { }
+# end
 
-  # def destroy
-  #     expense = Expense.find_by(id: params[:id])
-  #     expense.destroy
-  #     render json: {}, status: :no_content
-  # end
+# def destroy
+#     expense = Expense.find_by(id: params[:id])
+#     expense.destroy
+#     render json: {}, status: :no_content
+# end

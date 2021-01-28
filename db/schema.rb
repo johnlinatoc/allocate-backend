@@ -11,52 +11,51 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2019_08_06_220910) do
-
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.float "budget"
-    t.bigint "monthly_budget_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["monthly_budget_id"], name: "index_categories_on_monthly_budget_id"
+  create_table 'categories', force: :cascade do |t|
+    t.string 'name'
+    t.float 'budget'
+    t.bigint 'monthly_budget_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['monthly_budget_id'], name: 'index_categories_on_monthly_budget_id'
   end
 
-  create_table "expenses", force: :cascade do |t|
-    t.string "name"
-    t.float "amount"
-    t.bigint "user_id"
-    t.bigint "monthly_budget_id"
-    t.bigint "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_expenses_on_category_id"
-    t.index ["monthly_budget_id"], name: "index_expenses_on_monthly_budget_id"
-    t.index ["user_id"], name: "index_expenses_on_user_id"
+  create_table 'expenses', force: :cascade do |t|
+    t.string 'name'
+    t.float 'amount'
+    t.bigint 'user_id'
+    t.bigint 'monthly_budget_id'
+    t.bigint 'category_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['category_id'], name: 'index_expenses_on_category_id'
+    t.index ['monthly_budget_id'], name: 'index_expenses_on_monthly_budget_id'
+    t.index ['user_id'], name: 'index_expenses_on_user_id'
   end
 
-  create_table "monthly_budgets", force: :cascade do |t|
-    t.string "name"
-    t.integer "year"
-    t.float "monthly_budget"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_monthly_budgets_on_user_id"
+  create_table 'monthly_budgets', force: :cascade do |t|
+    t.string 'name'
+    t.integer 'year'
+    t.float 'monthly_budget'
+    t.bigint 'user_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['user_id'], name: 'index_monthly_budgets_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'username'
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "categories", "monthly_budgets"
-  add_foreign_key "expenses", "categories"
-  add_foreign_key "expenses", "monthly_budgets"
-  add_foreign_key "expenses", "users"
-  add_foreign_key "monthly_budgets", "users"
+  add_foreign_key 'categories', 'monthly_budgets'
+  add_foreign_key 'expenses', 'categories'
+  add_foreign_key 'expenses', 'monthly_budgets'
+  add_foreign_key 'expenses', 'users'
+  add_foreign_key 'monthly_budgets', 'users'
 end

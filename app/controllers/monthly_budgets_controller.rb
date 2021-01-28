@@ -14,18 +14,19 @@ class MonthlyBudgetsController < ApplicationController
   end
 
   def create
-    budget = MonthlyBudget.create(
-      name: params[:month_name],
-      year: params[:year],
-      monthly_budget: params[:monthly_income],
-      user_id: params[:user_id]
-    )
+    budget =
+      MonthlyBudget.create(
+        name: params[:month_name],
+        year: params[:year],
+        monthly_budget: params[:monthly_income],
+        user_id: params[:user_id]
+      )
     render json: budget
   end
 
   def newMonthBudget
     month = MonthlyBudget.find_by(id: params[:month_id])
-    month.update( monthly_budget: params[:monthly_income] )
+    month.update(monthly_budget: params[:monthly_income])
     render json: month
   end
 end

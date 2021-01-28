@@ -16,14 +16,14 @@ class ExpensesController < ApplicationController
   end
 
   def create
-    expense = Expense.create(
-      name: params[:expense_title],
-      user_id: params[:userId],
-      category_id: params[:category_id],
-      monthly_budget_id: params[:monthly_budget_id],
-      amount: params[:amount]
-    )
+    expense =
+      Expense.create(
+        name: params[:expense_title],
+        user_id: params[:userId],
+        category_id: params[:category_id],
+        monthly_budget_id: params[:monthly_budget_id],
+        amount: params[:amount]
+      )
     render json: expense
   end
-
 end
