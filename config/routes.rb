@@ -16,6 +16,6 @@ Rails
     get '/current_user/:id', to: 'users#show'
     post '/current_user', to: 'users#create'
     patch '/current_user/:id', to: 'users#update'
-    delete '/current_user/:id', to: 'users#destroy'
+    delete '/current_user', to: 'users#destroy'
     patch '/new_budget', to: 'monthly_budgets#newMonthBudget'
   end
