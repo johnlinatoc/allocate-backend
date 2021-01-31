@@ -4,9 +4,6 @@ Rails
   .draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-    resources :monthly_budgets, :categories, :expenses
-    resources :users, only: [:create]
-
     get '/profile', to: 'users#profile'
     get '/users/:id/categories', to: 'categories#user_categories'
     get '/users/:id/expenses', to: 'expenses#user_expenses'
@@ -18,4 +15,7 @@ Rails
     patch '/current_user/:id', to: 'users#update'
     delete '/current_user', to: 'users#destroy'
     patch '/new_budget', to: 'monthly_budgets#newMonthBudget'
+
+    resources :monthly_budgets, :categories, :expenses
+    resources :users, except: [:new, :show]
   end
