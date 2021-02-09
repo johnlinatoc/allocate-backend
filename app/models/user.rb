@@ -4,11 +4,8 @@ class User < ApplicationRecord
   has_many :expenses, dependent: :destroy
   validates :username, uniqueness: { case_sensitive: false }
 
-  def initialize; end
-
   def addMonths
     monthKey = {
-      
       1 => 'January',
       2 => 'February',
       3 => 'March',
@@ -32,7 +29,7 @@ class User < ApplicationRecord
       MonthlyBudget.create(
         name: monthKey[userMonth],
         year: year,
-        user_id: @user.id
+        user_id: self.id
       )
       if userMonth == 12
         userMonth = 1
@@ -43,5 +40,6 @@ class User < ApplicationRecord
 
       counter += 1
     end
+
   end
 end

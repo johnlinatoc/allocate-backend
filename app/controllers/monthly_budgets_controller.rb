@@ -24,7 +24,11 @@ class MonthlyBudgetsController < ApplicationController
     render json: budget
   end
 
-  def newMonthBudget
+  def editBudget
+    month = MonthlyBudget.find_by(id: params[:month_id])
+  end
+
+  def editMonthlyIncome
     month = MonthlyBudget.find_by(id: params[:month_id])
     month.update(monthly_budget: params[:monthly_income])
     render json: month
