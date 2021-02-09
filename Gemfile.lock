@@ -99,7 +99,7 @@ GEM
     prettier (1.5.1)
     puma (3.12.6)
     racc (1.5.2)
-    rack (2.0.8)
+    rack (2.2.3)
     rack-cors (1.0.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
