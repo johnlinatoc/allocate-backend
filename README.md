@@ -26,7 +26,7 @@ Example of Creating New Budget: ![New Budget](./public/image4.png)
 - [Victory Charts for data visualization](https://formidable.com/open-source/victory/)
 
 ## Features
-
+ra
 Users can add expenses and the dashboard's user interface dynamically changes upon user entries with different relevant indicators.
 
 Users also have a MyBudget section that showcases their spending habits to help them make wiser decisions.
@@ -43,6 +43,8 @@ $ rails db:seed
 
 $ rails server
 ```
+
+If you're using rvm and having trouble installing ruby v2.6.1 you can run ```rvm install "ruby-2.6.1" --with-out-ext=fiddle```
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
